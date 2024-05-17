@@ -35,5 +35,10 @@ public class DemoOperator {
 
         System.out.println(r11);
 
+        int k = 4;
+        int result3 = k++ * 7 * ++k;
+
+        System.err.println(result3);
+
     }
 }
