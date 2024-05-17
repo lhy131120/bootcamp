@@ -19,16 +19,41 @@ public class DemoLoop {
         // }
 
         
-        for (int i = 0; i < 7; i++) {
-            if( i%2 == 0 && i != 0) {
-                System.out.println(i);
+        // for (int i = 0; i < 7; i++) {
+        //     if( i%2 == 0 && i != 0) {
+        //         System.out.println(i);
+        //     }
+        // }
+
+        int sum = 0;
+        for (int i = 0; i < 9; i++) {
+            if(i % 2 == 0 && i != 0) { // % 2 to find the even number
+                sum += i;
+            }
+        }
+        System.out.println("sum=" + sum);
+
+        for (int i = 8; i > 0; i--) {
+            if(i%2 == 0 ) {
+                // System.out.println(i);
             }
         }
 
-        int sum = 0;
-        for (int i = 0; i < 11; i++) {
-            sum += i;
+        // break >> 直接quit呢個loop
+        for (int i = 0; i < 10; i++) {
+            if(i > 7) {
+                break; //break 盡量不要寫在main logic 放在statement的頂部
+            }
+            // 此部分是main logic >> 即我哋的目的
+            // System.out.println(i);
         }
-        System.out.println("sum=" + sum);
+
+        // continue  >> skip 走某啲條件
+        for(int i = 0; i < 10; i++) {
+            if(i % 2 == 0) {
+                continue;
+            }
+            System.out.println("continue " + i);
+        }
     }
 }
