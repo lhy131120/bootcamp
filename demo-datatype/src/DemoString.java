@@ -72,5 +72,44 @@ public class DemoString {
         if(x3.substring(0,3).equals("wel")) {
             System.out.println("YES");
         }
+
+        // =========================================
+
+        //isEmpty()
+        String x7 = "";
+        int x8 = x7.isEmpty() == true ?  1 : 2;
+
+        // isBlank()
+        String x9 = "";
+        System.out.println(x9.isBlank()); // true 
+        x9 = " ";
+        System.out.println(x9.isEmpty()); // false
+
+        String s10 = "hello";
+        System.out.println(s10.substring(0)); // from index 0 to end 
+        System.out.println(s10.substring(0, 3)); //from index 0 to (3-1)
+
+        s10.toUpperCase();
+        s10.toLowerCase();
+        s10 = s10.replace("el", "koko");
+        // System.out.println(s10.replace("el", "koko"));
+        System.out.println(s10);
+
+        //startsWith()
+        System.out.println(s10.startsWith("he"));
+        // endsWith
+        System.out.println(s10.startsWith("ko"));
+
+        // trim() like JavaScript
+
+        String[] strings = new String[] {"hello", "jdksj", "vincent", "HeLLo", "   Hello  "};
+
+        int count = 0;
+        for(int i = 0; i < strings.length; i++) {
+            if(strings[i].trim().toUpperCase().contains("ELL")) {
+                count++;
+            }
+        }
+        System.out.println("count ELL has " + count);
     }
 }

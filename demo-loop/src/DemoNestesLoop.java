@@ -14,10 +14,6 @@ public class DemoNestesLoop {
       }
     }
 
-
-    // HomeWork
-    // 1-20 > 1,3,5,7,9,12,14,16,18,20
-
     String s = "Vincent Book Game Laptop";
     // Find the first index of charactor 'a'
     // 14
@@ -28,5 +24,24 @@ public class DemoNestesLoop {
         break;
       }
     }
+
+    // HomeWork
+    // 1-20 > 1,3,5,7,9,12,14,16,18,20
+
+    for (int i = 0; i <= 20; i++){
+      // if( i <= 10 && i % 2 != 0) {
+      //   System.out.println(i);
+      // }
+
+      // if(i > 10 && i % 2 == 0) {
+      //   System.out.println(i);
+      // }
+      
+    }
+
+    for (int i = 0; ; i++) {
+      System.out.println("hhi");
+    }
+
   }
 }
