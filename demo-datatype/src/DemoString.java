@@ -77,6 +77,7 @@ public class DemoString {
 
         //isEmpty()
         String x7 = "";
+        // init value時的if判斷
         int x8 = x7.isEmpty() == true ?  1 : 2;
 
         // isBlank()
