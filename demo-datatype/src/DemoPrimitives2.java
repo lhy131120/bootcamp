@@ -5,6 +5,7 @@ public class DemoPrimitives2 {
     long l3 = 10l;  // 太似1  avoid to use
 
 
+
     //Java: int > long
 
     long l4 = 63; // assign int value 63 to long variable l4 
