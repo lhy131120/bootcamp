@@ -16,6 +16,10 @@ public class DemoMethod {
         System.out.println(isElderly(66));
 
         System.out.println(isSubstring("hello", "lloo"));
+
+        System.out.println(circleArea(3));
+        // double * double 有精度問題  0.2 * 0.2 => 0.02000000000004
+        // 有解決方法
     }
 
 
@@ -81,5 +85,13 @@ public class DemoMethod {
         //         } else if()
         //     }
         // }
+    }
+
+    // =======HW=======
+    public static double circleArea(int radius) {
+        // Code Here
+        //  int * int * double => double(2 * 2 * 2.0 => 80)
+        // double 係唔可以相x
+        return radius * radius * Math.PI;
     }
 }

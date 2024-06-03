@@ -112,5 +112,39 @@ public class DemoString {
             }
         }
         System.out.println("count ELL has " + count);
+
+        for(int i = 0; i < strings.length; i++) {
+            // 唔睇大細階
+            if(strings[i].trim().equalsIgnoreCase("hello")) {
+                System.out.println(strings[i]);
+            }
+        }
+
+        String s13 = "Helloll";
+
+        System.out.println(s13.indexOf("ll") == 2); // 2
+
+        // 
+        System.out.println(s13.indexOf("ll")); // 2, the first pattern
+        System.out.println(s13.indexOf('e'));  // 1
+        System.out.println(s13.indexOf('e'));  // 1
+
+        System.out.println(s13.indexOf("ll", 4)); // 5 找到輸出位置
+        System.out.println(s13.indexOf("ll", 5)); // -1 找不到 -1
+
+        System.out.println(s13.indexOf(101)); // 1， ascii 'e' -> 101
+        System.out.println(s13.lastIndexOf("a")); // 5, the last occourence of the pattern
+
+        String s14 = "abc";
+        s14 += "def";
+        System.out.println(s14);
+
+        String s15 = "abc";
+        s15 = s15.concat("def"); // better performance ... same as JavaScript
+        System.out.println(s15);
+
+        System.out.println(s14.compareTo(s15)); // 0 campare value // value of 14 = value of 15
+        System.out.println(s14.equals(s15)); // true
+        System.out.println(s14 == s15); // false 因為concat, == 係會compare address
     }
 }

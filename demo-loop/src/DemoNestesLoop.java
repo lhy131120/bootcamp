@@ -39,9 +39,13 @@ public class DemoNestesLoop {
       
     }
 
-    for (int i = 0; ; i++) {
-      System.out.println("hhi");
-    }
-
+  //  試print 
+  // *
+  // **
+  // ***
+  // ****
+  // ***
+  // **
+  // *
   }
 }
