@@ -36,4 +36,9 @@ public class DemoBigDecimal {
   }
 
   // 有可能先X除後加減
+  public static double maxAll(double n1, double n2) {
+    return BigDecimal.valueOf(n1)
+              .divide(BigDecimal.valueOf(n2), RoundingMode.DOWN)
+              .doubleValue();
+  }
 }
