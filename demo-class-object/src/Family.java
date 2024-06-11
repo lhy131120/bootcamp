@@ -27,9 +27,6 @@ public class Family {
     Family huiyui = new Family();
     huiyui.setName("hui yui");
     huiyui.setRelationship("little girl");
-    huiyui.isOver18(false);
   }
-
-  
 
 }
