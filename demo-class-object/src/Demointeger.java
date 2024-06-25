@@ -19,5 +19,25 @@ public class Demointeger {
     // For Class, you should always compare their objects value by METHOD
     // 所以用 == 去checking, check緊係object ref.
 
+    // Float, Double (No Internal Cache in JVM) 因為 float,double 之間太多小數
+    Float f1 = 10.12345f; // autobox: float value => Float Object
+    Float f2 = 10.12345f; // autobox: float value => Float Object
+
+    System.out.println(f1 == f2); //false
+
+    // Boolean - support Internal Cache - 數量有限 true or false
+    Boolean b1 = true;
+    Boolean b2 = true;
+    System.out.println(b1 == b2); // true
+
+    // Support Internal Cache -128 to 127
+    Character c1 = 'c'; 
+    Character c2 = 'c';
+    System.out.println(c1 == c2); // true
+
+    Character c3 = '的'; 
+    Character c4 = '的';
+    System.out.println(c3 == c4);
+
   }
 }

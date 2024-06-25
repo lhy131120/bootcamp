@@ -1,59 +1,61 @@
 public class Book {
-  private String name;
+  private String bookName;
   private String author;
   private String isbn;
-  private Boolean forKid;
-  private Number price;
+  private boolean isKidsBook;
+  private String[] bookTypes;
+  private String msg;
 
-
-
-  // static method belongs to class *****
-  // instance method belongs to object *****
-  
-  // 唔想return就用void
-  // set 可以無return
-
-  public void setName(String bookName) {
-    this.name = bookName;
+  // constructor
+  public Book(String author, String isbn, boolean forkids, String[] bookTypes) {
+    this.author = author;
+    this.isbn = isbn;
+    this.isKidsBook = forkids;
+    this.bookTypes = bookTypes;
   }
 
+
+  // getter
+  public String getBookName() {
+    return this.bookName;
+  }
+  public String getAuthor() {
+    return this.author;
+  }
+  public String getIsbnr() {
+    return this.isbn;
+  }
+  public boolean getisKidsBook() {
+    return this.isKidsBook;
+  }
+  public String[] getbookTypes() {
+    return this.bookTypes;
+  }
+  
+  // setter
+  public void setBookName(String bookName) {
+    this.bookName = bookName;
+  }
   public void setAuthor(String author) {
     this.author = author;
   }
-
-  public void setISBN(String isbn) {
+  public void setIsbn(String isbn) {
     this.isbn = isbn;
   }
-
-  public void setForKid(Boolean status) {
-    this.forKid = status;
+  public void isKidsBook(boolean forkids) {
+    this.isKidsBook = forkids;
+  }
+  public void setBookTypes(String[] types) {
+    this.bookTypes = types;
   }
 
-  public void setPrice(Number price) {
-    this.price = price;
-  }
-
-  // instrance method 
-  public String getName() {
-    return this.name;
-  }
-
-  public String getAuthor() {
-    return this.author + " is the Author of Book!!";
-  }
-
-  public Number getPrice() {
-    return this.price;
+  public String toString() {
+    String result = isKidsBook ? "suitable for kids" : "not good for kids";
+    return "Book name is " + bookName +
+           ", Author is " + author + 
+           ", Book is " + result +
+           ", You can find information by ISBN no.:" +isbn;
   }
 
 
-  public static void main(String[] args) {
-    Book rayBook = new Book();
-
-    // rayBook.getName("rayBook1");
-    rayBook.setPrice(130);
-    rayBook.setAuthor("God Father");
-    System.out.println(rayBook.getPrice());
-    System.out.println(rayBook.getAuthor());
-  }
 }

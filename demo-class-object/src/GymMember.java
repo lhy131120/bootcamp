@@ -61,6 +61,10 @@ public class GymMember {
     this.membershipLevel = level;
   }
 
+  public String maxName() {
+    return this.firstName + " " + this.lastName;
+  }
+
   // custom toString method
   public String toString() {
     return "Gym Member is " + 

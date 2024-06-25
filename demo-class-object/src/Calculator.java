@@ -1,15 +1,24 @@
+import java.math.BigDecimal;
+
 public class Calculator {
 
   private int x;
   private int y;
 
-  // public static double sum(double x, double y) {
-  //   return 
-  // }
-
   // static method -> instance method ??!!
   public static int sum(int x, int y) {
+    System.out.println("sum(int x, int y) is running ...");
     return x + y;
+  }
+
+  public static double sum(double x, double y) {
+    System.out.println("sum(double x, double y) is running ...");
+    return BigDecimal.valueOf(x).add(BigDecimal.valueOf(y)).doubleValue();
+  }
+
+  public static double sum(float x, double y) {
+    System.out.println("sum(float x, double y) is running ...");
+    return BigDecimal.valueOf(x).add(BigDecimal.valueOf(y)).doubleValue();
   }
 
   public void setX(int x) {
@@ -28,6 +37,20 @@ public class Calculator {
     return this.x * this.y;
   }
 
+  public static void test(String[] args) {
+    // basic for loop
+    for (int i = 0; i < args.length; i++) {
+      System.out.println(args[i]);
+    }
+  }
+
+  public static void test2(String... args) { // String... -> String[] (they are same type)
+    // for-each
+    for (String s : args) {
+      System.out.println(s);
+    }
+  }
+
   public static void main(String[] args) {
 
     // sysout
@@ -43,30 +66,39 @@ public class Calculator {
     c1.multiply(); // 6
 
     // Method Overloading
-    sum(1,2);
+    sum(1, 2);
+    // because you are passing int value, so "overloading" determine
+    // "sum(int x, int y)" should be called.
 
+    sum(1.0, 2.0); // 3.0
+    // "sum(double x, double y)" is called.
 
-    // upcast 
-    // overloading即是
-    // Java 核心 1個method名會根據參數的不同輸出對應的結果
-    // 行為一樣 不需要寫每個type的method
-    // 最好的例子valueOf
-  }
+    sum(1.0f, 2.0f); // 1.0f -> float value, 2.0f -> float value
+    // upcast, promotion
+    // "sum(float x, double y)" is called.
 
-
-  public static void test(String[] args) {
-    for (int i = 0; i< args.length; i++) {
-      System.out.println(args[i]);
-    }
-  }
-
-  public static void test2(String ...args) {
-    for (String s : args) {
-      System.out.println(s);
-    }
+    // String.valueOf() -> overloading
+    String.valueOf(10L); // "10"
+    String.valueOf(new char[] {'a', 'b', 'c'}); // "abc"
 
     Calculator.test(new String[] {"abc", "ijk"});
-    Calculator.test2("abc", "jbk");
-  }
+    Calculator.test2(new String[] {"abc", "ijk"});
+    Calculator.test2("abc", "ijk");
 
+    // Static
+    Calculator.sum(3, 2);
+    new Calculator().setX(3); // setX void 所以搵唔番佢
+    Calculator x =  new Calculator(); 
+    x.setX(3);
+    x.setY(2);
+    System.out.println(x.sum());  //5
+
+    System.out.println(x.sum(3,2)); // 需可以但無意思
+
+    // Calculator.sum();  //Error
+    //Instance method can't called by Class; it should be called by Object. object call x.sum(); 唔係Class
+
+    // Static method can be called by instance(object) or Class Name
+    // Instance method can be called by instance (object) only
+  }
 }

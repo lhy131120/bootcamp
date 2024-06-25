@@ -146,5 +146,10 @@ public class DemoString {
         System.out.println(s14.compareTo(s15)); // 0 campare value // value of 14 = value of 15
         System.out.println(s14.equals(s15)); // true
         System.out.println(s14 == s15); // false 因為concat, == 係會compare address
+
+        String s16 = "HI";
+        System.out.println(s16.charAt(0));
+        System.out.println(s16.charAt(1));
+        System.out.println(s16.charAt(2));
     }
 }
