@@ -3,23 +3,32 @@ package deck;
 import java.util.Arrays;
 
 public class Deck {
-  private static String[] suits =
-      new String[] {"DIAMOND", "CLUB", "HEART", "SPADE"};
-  private static String[] ranks = new String[] {"ACE", "TWO", "THREE", "FOUR",
-      "FIVE", "SIX", "SEVEN", "EIGHT", "NINE", "TEN", "JACK", "QUEEN", "KING"};
-  public static int length = suits.length * ranks.length;
+  // private static String[] suits = new String[] {"DIAMOND", "CLUB", "HEART", "SPADE"};
+  // private static String[] ranks = new String[] {"ACE", "TWO", "THREE", "FOUR","FIVE", "SIX", "SEVEN", "EIGHT", "NINE", "TEN", "JACK", "QUEEN", "KING"};
+
+
+  // public static int length = suits.length * ranks.length;
+  public static int length = Suit.values().length * Rank.values().length;
 
   private Card[] cards;
 
   public Deck() {
     this.cards = new Card[length];
     int idx = 0;
-    for (String suit : suits) {
-      for (String rank : ranks) {
+    for (Suit suit : Suit.values()) {
+      for (Rank rank : Rank.values()) {
         this.cards[idx++] = new Card(suit, rank);
       }
     }
   }
+
+  public static void test() {
+    Deck d = new Deck();
+    d.getCards();
+    System.out.println(d.getCards());
+  }
+
+  // public 
 
   public Card[] getCards() {
     return this.cards;

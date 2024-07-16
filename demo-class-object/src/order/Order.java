@@ -6,6 +6,8 @@ public class Order {
   private static int count = 0;
 
   private int id;
+
+  // 封裝的例子
   private Item[] items; // object ref
   private String coupon;
 
@@ -18,6 +20,7 @@ public class Order {
     return this.id;
   }
 
+  // 只取items的某資料？ 如total amount, total 
   public Item[] getItems() {
     return this.items;
   }

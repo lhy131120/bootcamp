@@ -34,6 +34,27 @@ public class DemoObject {
     System.out.println(mi1.hashCode());
     System.out.println(mi2.hashCode());
     System.out.println(mi3.hashCode());
+
+
+
+    // **********************************************************************
+    Object cat = new Cat();
+    // cat (object reference) indeed pointing ti cat object
+    // run() that instance method canc only called by object declared by Cat.class
+    // if the object reference is declared by Object .class , it cannot call run() method
+    // cat.run(); //compile time error => 決定類型OK / NOT
+    // run time error => 執行的 
+
+    // downcast 
+    Cat cat2 = (Cat) cat; // Reason why compile error:  
+
+    cat2.hashCode();
+    // cat2.equals();
+
+    // between difference 
+    //thie dirffenence between 
+    // Object vs Object reference
+
   }
 
   
