@@ -41,10 +41,27 @@ public class HashMapDemo {
 
     System.out.println(nameMap);
     
-    nameMap.remove(-45);
+    // nameMap.remove(-45);
+    // System.out.println(nameMap);
+
+    String _customName = nameMap.remove(1010);
     System.out.println(nameMap);
 
-    String _customName =nameMap.remove(1010);
-    System.out.println(nameMap);
+    System.out.println(nameMap.containsKey(-45)); // true
+
+    // loop keyset
+    for(Integer x : nameMap.keySet()){
+      System.out.println(x);
+    }
+
+    for(String x : nameMap.values()){
+      System.out.println(x);
+    }
+
+    System.out.println(nameMap.size());
+    System.out.println(nameMap.containsValue("Monster")); // true
+    System.out.println(nameMap.containsValue("Peter")); // false
   }
+
+  // put, get, contain
 }

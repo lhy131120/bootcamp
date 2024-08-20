@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class ArrayListDemo {
@@ -91,5 +92,29 @@ public class ArrayListDemo {
         }
 
         System.out.println(customList);
+
+
+        ArrayList<Object> objects = new ArrayList<>();
+        objects.add("abc");
+        objects.add(1);
+        objects.add(LocalDate.of(2024, 5, 22));
+        objects.add(new HKID("A1234567"));
+        // print 
+        // check if the different
+
+
+        // Polymorphism Part 2: runtime => implementation
+        // **************Important****************
+        for (Object object : objects) {
+            // runtime 果刻先知道佢係用緊String Object的 equals,否則最原本object的
+            //只係check refence, 所以關鍵在於執行果下
+            if(object.equals(new String("abc"))){ // String object equals
+                System.out.println("hello");
+            } else if(object.equals(new HKID("A1234567"))) { //HKID object equals
+                System.out.println("hello2");
+            } else if(object.equals(new Integer(1))) { //HKID object equals
+                System.out.println("hello3");
+            }
+        }
     }
 }
