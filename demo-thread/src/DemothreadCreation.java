@@ -23,5 +23,16 @@ public class DemothreadCreation {
 
 
         System.out.println("Program end!!!");
+
+        AddStringMillionTimeThread thread3 = new AddStringMillionTimeThread();
+        thread3.start();
+
+        try {
+            thread3.join();
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+
+        
     }
 }
